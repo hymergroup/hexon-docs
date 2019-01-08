@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to the BD Lease API! You can use our API to publish, update and remove resources to our database of cars and advertisers. Before you can start using our API, please request a `Client ID` and `Client Secret` for your application.
+Welcome to the HYMER API! You can use our API to publish, update and remove resources to our database of cars and advertisers and advertisements. Before you can start using our API, please request a `Client ID` and `Client Secret` for your application.
 
 # API Version
 
@@ -10,7 +10,8 @@ The API has a staging environment to test your integration and a production envi
 
   - **Production** - `https://aanbod.financial.leasedesk.nl`
   - **Staging environment** - `https://staging.financial.leasedesk.nl/`
-
+  - **Dev Environment** - `http://hymer.ptchr/`
+  
 ### Current version
 
-The current version of our API is v1, please prefix all routes using `api/v1/`, for example `https://staging.financial.leasedesk.nl/api/v1/user`.
+The current version of our API is v1, please prefix all routes using `api/v1/`, for example `https://staging.hymerptchr.nl/api/v1/user`.

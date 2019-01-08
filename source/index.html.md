@@ -12,6 +12,7 @@ includes:
   - authentication
   - advertiser
   - cars
+  - advertisements
   - errors
 
 search: true
