@@ -293,6 +293,17 @@
               </ul>
           </li>
           <li>
+            <a href="#advertisements" class="toc-h1 toc-link" data-title="advertisements">Advertisements</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-an-advertisement" class="toc-h2 toc-link" data-title="create-an-advertisement">Create an Advertisement</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-advertisement" class="toc-h2 toc-link" data-title="delete-a-specific-advertisement">Delete a Specific Advertisement</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#status-codes" class="toc-h1 toc-link" data-title="status-codes">Status codes</a>
               <ul class="toc-list-h2">
                   <li>
@@ -312,16 +323,17 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the BD Lease API! You can use our API to publish, update and remove resources to our database of cars and advertisers. Before you can start using our API, please request a <code>Client ID</code> and <code>Client Secret</code> for your application.</p>
+<p>Welcome to the HYMER API! You can use our API to publish, update and remove resources to our database of cars and advertisers and advertisements. Before you can start using our API, please request a <code>Client ID</code> and <code>Client Secret</code> for your application.</p>
 <h1 id='api-version'>API Version</h1>
 <p>The API has a staging environment to test your integration and a production environment for exchanging live data. Both environments come with their own authentication tokens, so please make sure you&#39;ve received or requested access to the environment you want to use.</p>
 <h3 id='environment-base-urls'>Environment base URLs</h3>
 <ul>
 <li><strong>Production</strong> - <code>https://aanbod.financial.leasedesk.nl</code></li>
 <li><strong>Staging environment</strong> - <code>https://staging.financial.leasedesk.nl/</code></li>
+<li><strong>Dev Environment</strong> - <code>http://hymer.ptchr/</code></li>
 </ul>
 <h3 id='current-version'>Current version</h3>
-<p>The current version of our API is v1, please prefix all routes using <code>api/v1/</code>, for example <code>https://staging.financial.leasedesk.nl/api/v1/user</code>.</p>
+<p>The current version of our API is v1, please prefix all routes using <code>api/v1/</code>, for example <code>https://staging.hymerptchr.nl/api/v1/user</code>.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authenticate, use this code:</p>
@@ -2028,7 +2040,133 @@ Remember — don't forget to authenticate!
     </span><span class="s2">"accessories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"xenon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sportstoelen"</span><span class="p">,</span><span class="w"> </span><span class="s2">"climate control"</span><span class="p">]</span><span class="w">
     </span><span class="err">//</span><span class="w"> </span><span class="err">other</span><span class="w"> </span><span class="err">data</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='status-codes'>Status codes</h1>
+</span></code></pre><h1 id='advertisements'>Advertisements</h1><h2 id='create-an-advertisement'>Create an Advertisement</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertisement/create
+    -X POST
+    -H "</span>Authorization: Bearer &lt;your_access_token&gt;<span class="s2">"
+    -H "</span>Content-Type: application/json<span class="s2">"
+    -H "</span>Accept: application/json<span class="s2">"
+    --data {
+        "</span>name<span class="s2">": "</span>Autobedrijf Janssen<span class="s2">",
+        "</span>image_src<span class="s2">": "</span>Stationstraat<span class="s2">",
+        "</span>target_url<span class="s2">": "</span>10<span class="s2">",
+        "</span>display_from<span class="s2">": "",
+        "</span>display_to<span class="s2">": "",
+        "</span>show_in_brands<span class="s2">": [
+            "</span>1<span class="s2">",
+            "</span>2<span class="s2">"
+        ],
+        "</span>show_in_type<span class="s2">": [
+            "</span>1<span class="s2">",
+            "</span>2<span class="s2">"
+        ],        
+    }
+</span></code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autobedrijf Janssen"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"img_src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stationstraat"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"target_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"display_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show_in_brands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"show_in_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"2"</span><span class="w">
+        </span><span class="p">],</span><span class="w">   
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new Advertisement. An advertisement can be given dates in which the advertisement will be shown.
+An advertisement can be specific for one or more brands, and/or, one or more types ( models ).</p>
+
+<aside class="warning">Make sure you send the json payload as raw body data to the endpoint.</aside>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://staging.financial.leasedesk.nl/api/v1/advertiser/create</code></p>
+<h3 id='raw-body-parameters-json'>Raw Body Parameters (JSON)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Validation Rules</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>Name of the Advertisement</td>
+<td>yes</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>image_src</td>
+<td>Absolute source of the advertisement image</td>
+<td>yes</td>
+<td><em>valid URL</em></td>
+</tr>
+<tr>
+<td>target_url</td>
+<td>Absolute Target of the advertisement</td>
+<td>yes</td>
+<td><em>valid URL</em></td>
+</tr>
+<tr>
+<td>display_from</td>
+<td>date from which the advertisement should be visible</td>
+<td>no</td>
+<td><em>date:Y-m-d</em></td>
+</tr>
+<tr>
+<td>display_to</td>
+<td>date to which the advertisement should not be visible</td>
+<td>no</td>
+<td><em>date:Y-m-d</em></td>
+</tr>
+<tr>
+<td>show_in_brands</td>
+<td>array of brand_ID&#39;s in which this advertisement should be shown</td>
+<td>no</td>
+<td><em>array</em></td>
+</tr>
+<tr>
+<td>show_in_type</td>
+<td>array of type_ID&#39;s in which this advertisement should be shown</td>
+<td>no</td>
+<td><em>array</em></td>
+</tr>
+</tbody></table>
+<h2 id='delete-a-specific-advertisement'>Delete a Specific Advertisement</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertisement/1"</span>
+  -X DELETE
+  -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>This endpoint deletes a specific Advertisement.</p>
+
+<aside class="warning">The JSON response will be empty, when the Advertisement is deleted succesfully a HTTP 200 OK response will be returned.</aside>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>DELETE https://staging.financial.leasedesk.nl/api/v1/advertisement/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the advertisement to delete</td>
+</tr>
+</tbody></table>
+<h1 id='status-codes'>Status codes</h1>
 <p>The API uses the following HTTP status codes:</p>
 <h3 id='error-codes-http-status-codes'>Error codes (HTTP status codes)</h3>
 <table><thead>
