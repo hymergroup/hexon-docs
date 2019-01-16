@@ -1,5 +1,5 @@
 ---
-title: BD Lease API Reference
+title: HYMER API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -11,8 +11,7 @@ includes:
   - intro
   - authentication
   - advertiser
-  - cars
-  - advertisements
+  - cars  
   - errors
 
 search: true

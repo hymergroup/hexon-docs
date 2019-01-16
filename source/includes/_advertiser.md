@@ -3,7 +3,7 @@
 ## Create an Advertiser
 
 ```shell
-curl "https://staging.financial.leasedesk.nl/api/v1/advertiser/create
+curl "https://hymer.ptchr-lv.nl/api/v1/advertiser/create
     -X POST
     -H "Authorization: Bearer <your_access_token>"
     -H "Content-Type: application/json"
@@ -50,7 +50,7 @@ This endpoint creates a new Advertiser.
 
 ### HTTP Request
 
-`POST https://staging.financial.leasedesk.nl/api/v1/advertiser/create`
+`POST https://hymer.ptchr-lv.nl/api/v1/advertiser/create`
 
 ### Raw Body Parameters (JSON)
 
@@ -70,7 +70,7 @@ web | Website address of the Advertiser | no | *valid URL*
 ## Update an Advertiser
 
 ```shell
-curl "https://staging.financial.leasedesk.nl/api/v1/advertiser/<ID>
+curl "https://hymer.ptchr-lv.nl/api/v1/advertiser/<ID>
     -X POST
     -H "Authorization: Bearer <your_access_token>"
     -H "Content-Type: application/json"
@@ -117,7 +117,7 @@ This endpoint updates an existing Advertiser.
 
 ### HTTP Request
 
-`PUT https://staging.financial.leasedesk.nl/api/v1/advertiser/<ID>`
+`PUT https://hymer.ptchr-lv.nl/api/v1/advertiser/<ID>`
 
 ### Raw Body Parameters (JSON)
 
@@ -137,7 +137,7 @@ web | Website address of the Advertiser | no | *valid URL*
 ## Get All Advertisers
 
 ```shell
-curl "https://staging.financial.leasedesk.nl/api/v1/advertiser"
+curl "https://hymer.ptchr-lv.nl/api/v1/advertiser"
   -H "Authorization: Bearer <your_access_token>"
 ```
 
@@ -184,7 +184,7 @@ This endpoint retrieves all advertisers created by the currently authenticated c
 
 ### HTTP Request
 
-`GET https://staging.financial.leasedesk.nl/api/v1/advertiser`
+`GET https://hymer.ptchr-lv.nl/api/v1/advertiser`
 
 ### Query Parameters
 
@@ -197,7 +197,7 @@ Remember — don't forget to authenticate!
 ## Get a Specific Advertiser
 
 ```shell
-curl "https://staging.financial.leasedesk.nl/api/v1/advertiser/1"
+curl "https://hymer.ptchr-lv.nl/api/v1/advertiser/1"
   -H "Authorization: Bearer <your_access_token>"
 ```
 
@@ -229,7 +229,7 @@ This endpoint retrieves a specific advertiser.
 
 ### HTTP Request
 
-`GET https://staging.financial.leasedesk.nl/api/v1/advertiser/<ID>`
+`GET https://hymer.ptchr-lv.nl/api/v1/advertiser/<ID>`
 
 ### URL Parameters
 
@@ -240,7 +240,7 @@ ID | The ID of the advertiser to retrieve
 ## Delete a Specific Advertiser
 
 ```shell
-curl "https://staging.financial.leasedesk.nl/api/v1/advertiser/1"
+curl "https://hymer.ptchr-lv.nl/api/v1/advertiser/1"
   -X DELETE
   -H "Authorization: Bearer <your_access_token>"
 ```
@@ -257,7 +257,7 @@ This endpoint deletes a specific Advertiser.
 
 ### HTTP Request
 
-`DELETE https://staging.financial.leasedesk.nl/api/v1/advertiser/<ID>`
+`DELETE https://hymer.ptchr-lv.nl/api/v1/advertiser/<ID>`
 
 ### URL Parameters
 

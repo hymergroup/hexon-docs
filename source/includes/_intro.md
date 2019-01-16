@@ -8,8 +8,8 @@ The API has a staging environment to test your integration and a production envi
 
 ### Environment base URLs
 
-  - **Production** - `https://aanbod.financial.leasedesk.nl`
-  - **Staging environment** - `https://staging.financial.leasedesk.nl/`
+  - **Production** - `https://#`
+  - **Staging environment** - `https://hymer.ptchr-lv.nl/`
   - **Dev Environment** - `http://hymer.ptchr/`
   
 ### Current version

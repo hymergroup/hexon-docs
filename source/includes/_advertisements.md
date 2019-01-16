@@ -4,7 +4,7 @@
 
 
 ```shell
-curl "https://staging.financial.leasedesk.nl/api/v1/advertisement/create
+curl "https://hymer.ptchr-lv.nl/api/v1/advertisement/create"
     -X POST
     -H "Authorization: Bearer <your_access_token>"
     -H "Content-Type: application/json"
@@ -54,7 +54,7 @@ An advertisement can be specific for one or more brands, and/or, one or more typ
 
 ### HTTP Request
 
-`POST https://staging.financial.leasedesk.nl/api/v1/advertiser/create`
+`POST https://hymer.ptchr-lv.nl/api/v1/advertiser/create`
 
 ### Raw Body Parameters (JSON)
 
@@ -71,7 +71,7 @@ show_in_type | array of type_ID's in which this advertisement should be shown | 
 ## Delete a Specific Advertisement
 
 ```shell
-curl "https://staging.financial.leasedesk.nl/api/v1/advertisement/1"
+curl "https://hymer.ptchr-lv.nl/api/v1/advertisement/1"
   -X DELETE
   -H "Authorization: Bearer <your_access_token>"
 ```
@@ -88,7 +88,7 @@ This endpoint deletes a specific Advertisement.
 
 ### HTTP Request
 
-`DELETE https://staging.financial.leasedesk.nl/api/v1/advertisement/<ID>`
+`DELETE https://hymer.ptchr-lv.nl/api/v1/advertisement/<ID>`
 
 ### URL Parameters
 
