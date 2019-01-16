@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>BD Lease API Reference</title>
+    <title>HYMER API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -293,17 +293,6 @@
               </ul>
           </li>
           <li>
-            <a href="#advertisements" class="toc-h1 toc-link" data-title="advertisements">Advertisements</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#create-an-advertisement" class="toc-h2 toc-link" data-title="create-an-advertisement">Create an Advertisement</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-advertisement" class="toc-h2 toc-link" data-title="delete-a-specific-advertisement">Delete a Specific Advertisement</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#status-codes" class="toc-h1 toc-link" data-title="status-codes">Status codes</a>
               <ul class="toc-list-h2">
                   <li>
@@ -328,8 +317,8 @@
 <p>The API has a staging environment to test your integration and a production environment for exchanging live data. Both environments come with their own authentication tokens, so please make sure you&#39;ve received or requested access to the environment you want to use.</p>
 <h3 id='environment-base-urls'>Environment base URLs</h3>
 <ul>
-<li><strong>Production</strong> - <code>https://aanbod.financial.leasedesk.nl</code></li>
-<li><strong>Staging environment</strong> - <code>https://staging.financial.leasedesk.nl/</code></li>
+<li><strong>Production</strong> - <code>https://#</code></li>
+<li><strong>Staging environment</strong> - <code>https://hymer.ptchr-lv.nl/</code></li>
 <li><strong>Dev Environment</strong> - <code>http://hymer.ptchr/</code></li>
 </ul>
 <h3 id='current-version'>Current version</h3>
@@ -338,7 +327,7 @@
 <blockquote>
 <p>To authenticate, use this code:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/oauth/token"</span>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/oauth/token"</span>
   -X POST
   -H <span class="s2">"Accept: application/json"</span> 
   -d <span class="s2">"grant_type=client_credentials&amp;client_id=&lt;your_client_id&gt;&amp;client_secret=&lt;your_client_secret&gt;"</span>
@@ -354,7 +343,7 @@
 </span></code></pre>
 <p>Getting authorised to use the API is as easy as requesting an access token using the Client ID and Client Secret codes you were handed by us.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://staging.financial.leasedesk.nl/oauth/token</code> </p>
+<p><code>POST https://hymer.ptchr-lv.nl/oauth/token</code> </p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -395,7 +384,7 @@ Make sure to replace with your client ID and Client Secret with the ones for the
   -H <span class="s2">"Authorization: Bearer &lt;token&gt;"</span> 
 </code></pre>
 <p>To authorize each next request when using the API you have to add the access_token to the header of your request. Also make sure you send the &quot;Accept: application/json&quot; header, this header is used by our system to render errors within the system in json instead of serving HTTP responses containing HTML.</p>
-<h1 id='advertisers'>Advertisers</h1><h2 id='create-an-advertiser'>Create an Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertiser/create
+<h1 id='advertisers'>Advertisers</h1><h2 id='create-an-advertiser'>Create an Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/advertiser/create
     -X POST
     -H "</span>Authorization: Bearer &lt;your_access_token&gt;<span class="s2">"
     -H "</span>Content-Type: application/json<span class="s2">"
@@ -438,7 +427,7 @@ Make sure to replace with your client ID and Client Secret with the ones for the
 
 <aside class="warning">Make sure you send the json payload as raw body data to the endpoint.</aside>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://staging.financial.leasedesk.nl/api/v1/advertiser/create</code></p>
+<p><code>POST https://hymer.ptchr-lv.nl/api/v1/advertiser/create</code></p>
 <h3 id='raw-body-parameters-json'>Raw Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -509,7 +498,7 @@ Make sure to replace with your client ID and Client Secret with the ones for the
 <td><em>valid URL</em></td>
 </tr>
 </tbody></table>
-<h2 id='update-an-advertiser'>Update an Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertiser/&lt;ID&gt;
+<h2 id='update-an-advertiser'>Update an Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/advertiser/&lt;ID&gt;
     -X POST
     -H "</span>Authorization: Bearer &lt;your_access_token&gt;<span class="s2">"
     -H "</span>Content-Type: application/json<span class="s2">"
@@ -552,7 +541,7 @@ Make sure to replace with your client ID and Client Secret with the ones for the
 
 <aside class="warning">Make sure you send the json payload as raw body data to the endpoint.</aside>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>PUT https://staging.financial.leasedesk.nl/api/v1/advertiser/&lt;ID&gt;</code></p>
+<p><code>PUT https://hymer.ptchr-lv.nl/api/v1/advertiser/&lt;ID&gt;</code></p>
 <h3 id='raw-body-parameters-json-2'>Raw Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -623,7 +612,7 @@ Make sure to replace with your client ID and Client Secret with the ones for the
 <td><em>valid URL</em></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-advertisers'>Get All Advertisers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertiser"</span>
+<h2 id='get-all-advertisers'>Get All Advertisers</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/advertiser"</span>
   -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
 </code></pre>
 <blockquote>
@@ -666,14 +655,14 @@ Make sure to replace with your client ID and Client Secret with the ones for the
 </span></code></pre>
 <p>This endpoint retrieves all advertisers created by the currently authenticated client.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://staging.financial.leasedesk.nl/api/v1/advertiser</code></p>
+<p><code>GET https://hymer.ptchr-lv.nl/api/v1/advertiser</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>None</p>
 
 <aside class="success">
 Remember — don't forget to authenticate!
 </aside>
-<h2 id='get-a-specific-advertiser'>Get a Specific Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertiser/1"</span>
+<h2 id='get-a-specific-advertiser'>Get a Specific Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/advertiser/1"</span>
   -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
 </code></pre>
 <blockquote>
@@ -701,7 +690,7 @@ Remember — don't forget to authenticate!
 
 <aside class="warning">If you try to get an advertiser that wasn't added by your client a HTTP error will be returned.</aside>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET https://staging.financial.leasedesk.nl/api/v1/advertiser/&lt;ID&gt;</code></p>
+<p><code>GET https://hymer.ptchr-lv.nl/api/v1/advertiser/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -714,7 +703,7 @@ Remember — don't forget to authenticate!
 <td>The ID of the advertiser to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-advertiser'>Delete a Specific Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertiser/1"</span>
+<h2 id='delete-a-specific-advertiser'>Delete a Specific Advertiser</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/advertiser/1"</span>
   -X DELETE
   -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
 </code></pre>
@@ -727,7 +716,7 @@ Remember — don't forget to authenticate!
 
 <aside class="warning">The JSON response will be empty, when the Advertiser is deleted succesfully a HTTP 200 OK response will be returned.</aside>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE https://staging.financial.leasedesk.nl/api/v1/advertiser/&lt;ID&gt;</code></p>
+<p><code>DELETE https://hymer.ptchr-lv.nl/api/v1/advertiser/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -740,27 +729,33 @@ Remember — don't forget to authenticate!
 <td>The ID of the Advertiser to delete</td>
 </tr>
 </tbody></table>
-<h1 id='cars'>Cars</h1><h2 id='create-a-car'>Create a Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/car/create
+<h1 id='cars'>Cars</h1><h2 id='create-a-car'>Create a Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/car/create
     -X POST
     -H "</span>Authorization: Bearer &lt;your_access_token&gt;<span class="s2">"
     -H "</span>Content-Type: application/json<span class="s2">"
     -H "</span>Accept: application/json<span class="s2">"
     --data {
        "</span>advertiser_id<span class="s2">": 1,
-       "</span>license_plate_number<span class="s2">": "</span>PD839Z<span class="s2">",
+       "</span>license_plate_number<span class="s2">": "</span>aa-bb-cc<span class="s2">",
        "</span>chassis_number<span class="s2">": null,
-       "</span>brand<span class="s2">": "</span>Opel<span class="s2">",
-       "</span><span class="nb">type</span><span class="s2">": "</span>Corsa<span class="s2">",
-       "</span>serie<span class="s2">": "</span>1.4-16V DESIGN EDITION 5-Drs Airco LM16<span class="s2">",
-       "</span>description<span class="s2">": "</span>Modelreeks, informatie, etc<span class="s2">",
-       "</span>body_type<span class="s2">": "</span>HB<span class="s2">",
+       "</span>brand<span class="s2">": "</span>hymer<span class="s2">",
+       "</span><span class="nb">type</span><span class="s2">": "</span>Exsis-t<span class="s2">",      
+       "</span>serie<span class="s2">": "</span>T 647 Premium<span class="s2">",
+       "</span>description<span class="s2">": "</span>Met de nieuwe Exsis-t zetten wij de succesvolle geschiedenis van de lichtgewichten voort. Met een totaal gewicht van minder dan 2.900 kg combineren wij <span class="k">in </span>deze reeks lichtgewichtbouw en comfort op bijna perfecte wijze. De Exsis-t 588 weegt klaar voor vertrek slechts 2.770 kg, zodat u zonder problemen nog voldoende bagage kunt laden zonder de belangrijke grens van 3,5 ton te overschrijden. Hiermee zet hij opnieuw maatstaven uit <span class="k">in </span>de klasse van de half-integralen. Dankzij speciaal ontwikkelde materialen, uiterst moderne productietechnieken, de GFK-lichtgewichtvloer, het AL-KO-lichtgewichtframe en de voor het merk typische PUAL-constructie konden we bij de productie van de Exsis-t veel gewicht besparen – zonder ons daarvoor op het vlak van uitrusting met minder tevreden te stellen: led-verlichting binnen, garagedeuren aan beide zijkanten en koudschuimmatrassen met verschillende zones zijn evenzeer standaard als het omvangrijke veiligheidspakket met airbags, ESP, Hill Holder en veel meer.<span class="s2">",
+       "</span>body_type<span class="s2">": "</span>AL<span class="s2">",
+       "</span>sleep_accomodations<span class="s2">": "</span>3<span class="s2">",
+       "</span>beds<span class="s2">":"</span>2<span class="s2">",
+       "</span>interior_layout<span class="s2">":"</span>FB<span class="s2">",
+       "</span>headroom<span class="s2">" : "</span>0<span class="s2">",
+       "</span>height<span class="s2">" : "</span>277<span class="s2">",
+       "</span>length<span class="s2">" : "</span>744<span class="s2">",
        "</span>fuel_type<span class="s2">": "</span>B<span class="s2">",
        "</span>fuel_consumption_city<span class="s2">": "</span>16<span class="s2">",
        "</span>fuel_consumption_highway<span class="s2">": "</span>23<span class="s2">",
        "</span>fuel_consumption_combined<span class="s2">": "</span>20<span class="s2">",
        "</span>transmission_type<span class="s2">": "</span>H<span class="s2">",
        "</span>transmission_amount<span class="s2">": 5,
-       "</span>color<span class="s2">": "</span>geel<span class="s2">",
+       "</span>color<span class="s2">": "</span>Zilver<span class="s2">",
        "</span>color_brand<span class="s2">": null,
        "</span>mileage<span class="s2">": 59638,
        "</span>mileage_type<span class="s2">": "</span>KM<span class="s2">",
@@ -776,9 +771,10 @@ Remember — don't forget to authenticate!
        "</span>doors<span class="s2">": 5,
        "</span>seats<span class="s2">": 5,
        "</span>keys_amount<span class="s2">": 2,
-       "</span>weight<span class="s2">": 1063,
+       "</span>weight<span class="s2">": 4000,
        "</span>construction_date<span class="s2">": "</span>2014-01-01<span class="s2">",
        "</span>apk_due_date<span class="s2">": "</span>2018-11-26<span class="s2">",
+       "</span>apk_on_delivery<span class="s2">": true,
        "</span>price_excl_vat<span class="s2">": 10450,
        "</span>price_incl_vat<span class="s2">": 10450,
        "</span>price_delivery<span class="s2">": 0,
@@ -786,44 +782,42 @@ Remember — don't forget to authenticate!
        "</span>tax_benefit<span class="s2">": 25,
        "</span>tax_road_min<span class="s2">": "</span>117.00<span class="s2">",
        "</span>tax_road_max<span class="s2">": "</span>130.00<span class="s2">",
+       "</span>tax_declarable<span class="s2">" : true,
        "</span>accessories<span class="s2">": [
-           "</span>3e remlicht<span class="s2">",
-           "</span>Airbag<span class="o">(</span>s<span class="o">)</span> hoofd en side<span class="s2">",
-           "</span>Airbag bestuurder en passagier<span class="s2">",
-           "</span>Airco<span class="s2">",
-           "</span>Alarm klasse 1<span class="o">(</span>startblokkering<span class="o">)</span><span class="s2">",
-           "</span>Anti blokkeer systeem<span class="s2">",
-           "</span>AUX-ingang<span class="s2">",
-           "</span>Bestuurdersstoel <span class="k">in </span>hoogte verstelbaar<span class="s2">",
-           "</span>Boordcomputer<span class="s2">",
-           "</span>Buitenspiegels elektrisch verstelbaar<span class="s2">",
-           "</span>Centrale deurvergrendeling met afstandsbediening<span class="s2">",
-           "</span>Cruise control<span class="s2">",
-           "</span>Electronic stability program<span class="s2">",
-           "</span>Elektrische ramen voor<span class="s2">",
-           "</span>Extra getint glas<span class="s2">",
-           "</span>Hoofdsteunen achter<span class="s2">",
-           "</span>Isofix<span class="s2">",
-           "</span>Lederen stuurwiel<span class="s2">",
-           "</span>Lichtmetalen velgen 16<span class="se">\"</span><span class="s2">",
-           "</span>Mistlampen voor<span class="s2">",
-           "</span>Multimedia-voorbereiding<span class="s2">",
-           "</span>Navigatie systeem af fabriek<span class="s2">",
-           "</span>Radio-cd/mp3 speler<span class="s2">",
-           "</span>Ruitenwisser achter<span class="s2">",
-           "</span>Stuur verstelbaar<span class="s2">",
-           "</span>USB-poort<span class="s2">"
+           ["</span>3e remlicht<span class="s2">","</span>sec<span class="s2">"],
+           ["</span>Airbag<span class="o">(</span>s<span class="o">)</span> hoofd en side<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Airbag bestuurder en passagier<span class="s2">","</span>sec<span class="s2">"],
+           ["</span>Airco<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Alarm klasse 1<span class="o">(</span>startblokkering<span class="o">)</span><span class="s2">","</span>sec<span class="s2">"],
+           ["</span>Anti blokkeer systeem<span class="s2">","</span>sec<span class="s2">"],
+           ["</span>AUX-ingang<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Bestuurdersstoel <span class="k">in </span>hoogte verstelbaar<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Boordcomputer<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Buitenspiegels elektrisch verstelbaar<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Centrale deurvergrendeling met afstandsbediening<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Cruise control<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Electronic stability program<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Elektrische ramen voor<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Extra getint glas<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Hoofdsteunen achter<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Lederen stuurwiel<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Lichtmetalen velgen 16<span class="se">\"</span><span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Mistlampen voor<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Multimedia-voorbereiding<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Navigatie systeem af fabriek<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Radio-cd/mp3 speler<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Ruitenwisser achter<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Stuur verstelbaar<span class="s2">","</span>int<span class="s2">"],
+           ["</span>USB-poort<span class="s2">", "</span>int<span class="s2">"]
        ],
        "</span>videos<span class="s2">": [
            {
                "</span><span class="nb">type</span><span class="s2">": "</span>YT<span class="s2">",
-               "</span>url<span class="s2">": "</span>https://www.youtube.com/v/4160NvEhThA<span class="s2">"
+               "</span>url<span class="s2">": "</span>https://www.youtube.com/v/L3dqNPkBtnw<span class="s2">"
            }
        ],
        "</span>images<span class="s2">": [
-        "</span>http://google.com/image.jpg<span class="s2">",
-        "</span>http://google.com/image2.jpg<span class="s2">",
-        "</span>http://google.com/image3.jpg<span class="s2">"
+        "</span>https://www.hymer.com/assets/images/modell-2018/reisemobile/exsis-t/HYMER_Exsis_t_silber_schwarz_Exterieur_Frontansicht.jpg<span class="s2">"
        ]
    }
 </span></code></pre>
@@ -832,10 +826,9 @@ Remember — don't forget to authenticate!
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"advertiser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"advertiser_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test_124"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autobedrijf Janssen"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stationstraat"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
@@ -846,23 +839,23 @@ Remember — don't forget to authenticate!
             </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+31 40 123 45 67"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@autobedrijfjassen.nl"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://autobedrijfjanssen.nl"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:22"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:22"</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:14:46"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:14:46"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"license_plate_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PD839Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"license_plate_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa-bb-cc"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"chassis_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Opel"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corsa"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"serie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4-16V DESIGN EDITION 5-Drs Airco LM16"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Modelreeks, informatie, etc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"body_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HB"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_consumption_city"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_consumption_highway"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_consumption_combined"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transmission_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hymer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exsis-t"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"serie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T 647 Premium"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Met de nieuwe Exsis-t zetten wij de succesvolle geschiedenis van de lichtgewichten voort. Met een totaal gewicht van minder dan 2.900 kg combineren wij in deze reeks lichtgewichtbouw en comfort op bijna perfecte wijze. De Exsis-t 588 weegt klaar voor vertrek slechts 2.770 kg, zodat u zonder problemen nog voldoende bagage kunt laden zonder de belangrijke grens van 3,5 ton te overschrijden. Hiermee zet hij opnieuw maatstaven uit in de klasse van de half-integralen. Dankzij speciaal ontwikkelde materialen, uiterst moderne productietechnieken, de GFK-lichtgewichtvloer, het AL-KO-lichtgewichtframe en de voor het merk typische PUAL-constructie konden we bij de productie van de Exsis-t veel gewicht besparen &amp;ndash; zonder ons daarvoor op het vlak van uitrusting met minder tevreden te stellen: led-verlichting binnen, garagedeuren aan beide zijkanten en koudschuimmatrassen met verschillende zones zijn evenzeer standaard als het omvangrijke veiligheidspakket met airbags, ESP, Hill Holder en veel meer."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"body_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_consumption_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_consumption_highway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_consumption_combined"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transmission_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transmission_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zilver"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"color_brand"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mileage"</span><span class="p">:</span><span class="w"> </span><span class="mi">59638</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mileage_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KM"</span><span class="p">,</span><span class="w">
@@ -878,58 +871,144 @@ Remember — don't forget to authenticate!
         </span><span class="s2">"doors"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"keys_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1063</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"construction_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-01 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"apk_due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-26 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_excl_vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10450.00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_incl_vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10450.00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_delivery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_bpm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1051.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"construction_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-01 00:00:00.000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe/Amsterdam"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"condition"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tax_declarable"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sleep_accomodations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"interior_layout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"headroom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"277"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"744"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"apk_due_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-26 00:00:00.000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe/Amsterdam"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"price_excl_vat"</span><span class="p">:</span><span class="w"> </span><span class="mi">10450</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_incl_vat"</span><span class="p">:</span><span class="w"> </span><span class="mi">10450</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_delivery"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_bpm"</span><span class="p">:</span><span class="w"> </span><span class="mi">1051</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_benefit"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_road_min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"117.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_road_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"accessories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"3e remlicht"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airbag(s) hoofd en side"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airbag bestuurder en passagier"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airco"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Alarm klasse 1(startblokkering)"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Anti blokkeer systeem"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"AUX-ingang"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Bestuurdersstoel in hoogte verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Boordcomputer"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Buitenspiegels elektrisch verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Centrale deurvergrendeling met afstandsbediening"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Cruise control"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Electronic stability program"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Elektrische ramen voor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Extra getint glas"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Hoofdsteunen achter"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Isofix"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Lederen stuurwiel"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Lichtmetalen velgen 16</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Mistlampen voor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Multimedia-voorbereiding"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Navigatie systeem af fabriek"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Radio-cd/mp3 speler"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Ruitenwisser achter"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Stuur verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"USB-poort"</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3e remlicht"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airbag(s) hoofd en side"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airbag bestuurder en passagier"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airco"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alarm klasse 1(startblokkering)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anti blokkeer systeem"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUX-ingang"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bestuurdersstoel in hoogte verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boordcomputer"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buitenspiegels elektrisch verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centrale deurvergrendeling met afstandsbediening"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cruise control"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electronic stability program"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elektrische ramen voor"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extra getint glas"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hoofdsteunen achter"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lederen stuurwiel"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lichtmetalen velgen 16</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mistlampen voor"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multimedia-voorbereiding"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Navigatie systeem af fabriek"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radio-cd/mp3 speler"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ruitenwisser achter"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stuur verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USB-poort"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"videos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.youtube.com/v/RICBjWLwupw"</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.youtube.com/v/L3dqNPkBtnw"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"http://google.com/image.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"http://google.com/image2.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"http://google.com/image3.jpg"</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:39"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:50:27"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging.financial.leasedesk.nl/aanbod/1"</span><span class="w">
+        </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:51:41"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:51:41"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hymer.ptchr-lv.nl/hymer-exsis-t-t-647-premium-1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -937,7 +1016,7 @@ Remember — don't forget to authenticate!
 
 <aside class="warning">Make sure you send the json payload as raw body data to the endpoint. Also remember that the advertiser ID should be equal to the ID returned by your call when creating an Advertiser!</aside>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://staging.financial.leasedesk.nl/api/v1/car/create</code></p>
+<p><code>POST https://hymer.ptchr-lv.nl/api/v1/car/create</code></p>
 <h3 id='raw-body-parameters-json'>Raw Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -1035,7 +1114,43 @@ Remember — don't forget to authenticate!
 <td>body_type</td>
 <td>The body type (see below)</td>
 <td>Yes</td>
-<td><em>in: HB,CB,CP,SUV,SD,SW,MPV,CC,O</em></td>
+<td><em>in: AL,IN,CA,FC,O</em></td>
+</tr>
+<tr>
+<td>sleep_accomodations</td>
+<td>how many people can sleep in this vehicle</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>beds</td>
+<td>How many beds this vehicle has</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>interior_layout</td>
+<td>What type of interior layout (see below)</td>
+<td>No</td>
+<td><em>in: FR, LB, DB, O</em></td>
+</tr>
+<tr>
+<td>headroom</td>
+<td>Inside height of vehicle in cm, leave to 0 ( zero ) if not available</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>height</td>
+<td>height of vehicle in cm</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>length</td>
+<td>length of vehicle in cm</td>
+<td>No</td>
+<td><em>integer</em></td>
 </tr>
 <tr>
 <td>construction_date</td>
@@ -1102,6 +1217,12 @@ Remember — don't forget to authenticate!
 <td>Due date for the yearly check-up</td>
 <td>No</td>
 <td><em>date:Y-m-d</em></td>
+</tr>
+<tr>
+<td>apk_on_delivery</td>
+<td>APK on delivery</td>
+<td>No</td>
+<td><em>boolean</em></td>
 </tr>
 <tr>
 <td>nap_valid</td>
@@ -1172,7 +1293,7 @@ Remember — don't forget to authenticate!
 <tr>
 <td>tax_benefit</td>
 <td>Tax benefit class in percent</td>
-<td>Yes</td>
+<td>No</td>
 <td><em>numeric</em></td>
 </tr>
 <tr>
@@ -1188,6 +1309,12 @@ Remember — don't forget to authenticate!
 <td><em>numeric</em></td>
 </tr>
 <tr>
+<td>tax_declarable</td>
+<td>Is this vehicle tax declarable</td>
+<td>No</td>
+<td><em>boolean</em></td>
+</tr>
+<tr>
 <td>images</td>
 <td>Array of images (see below)</td>
 <td>Yes</td>
@@ -1201,32 +1328,38 @@ Remember — don't forget to authenticate!
 </tr>
 <tr>
 <td>accessories</td>
-<td>Array of accessores (see below)</td>
+<td>Array of [accessories with categories] &#39;int&#39;, &#39;ext&#39;, &#39;sec&#39;, and &#39;O&#39;. Interior, exterior, security and Overig. (see below)</td>
 <td>No</td>
-<td><em>array</em></td>
+<td><em>array[accesories, category]</em></td>
 </tr>
 </tbody></table>
-<h2 id='update-a-car'>Update a Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/car/&lt;ID&gt;
+<h2 id='update-a-car'>Update a Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/car/&lt;ID&gt;
     -X PUT
     -H "</span>Authorization: Bearer &lt;your_access_token&gt;<span class="s2">"
     -H "</span>Content-Type: application/json<span class="s2">"
     -H "</span>Accept: application/json<span class="s2">"
-    --data {
+    --data{
        "</span>advertiser_id<span class="s2">": 1,
-       "</span>license_plate_number<span class="s2">": "</span>AABB11<span class="s2">",
+       "</span>license_plate_number<span class="s2">": "</span>aa-bb-cc<span class="s2">",
        "</span>chassis_number<span class="s2">": null,
-       "</span>brand<span class="s2">": "</span>Opel<span class="s2">",
-       "</span><span class="nb">type</span><span class="s2">": "</span>Corsa<span class="s2">",
-       "</span>serie<span class="s2">": "</span>1.4-16V DESIGN EDITION 5-Drs Airco LM16<span class="s2">",
-       "</span>description<span class="s2">": "</span>Modelreeks, informatie, etc<span class="s2">",
-       "</span>body_type<span class="s2">": "</span>HB<span class="s2">",
+       "</span>brand<span class="s2">": "</span>hymer<span class="s2">",
+       "</span><span class="nb">type</span><span class="s2">": "</span>Exsis-t<span class="s2">",      
+       "</span>serie<span class="s2">": "</span>T 647 Premium<span class="s2">",
+       "</span>description<span class="s2">": "</span>Met de nieuwe Exsis-t zetten wij de succesvolle geschiedenis van de lichtgewichten voort. Met een totaal gewicht van minder dan 2.900 kg combineren wij <span class="k">in </span>deze reeks lichtgewichtbouw en comfort op bijna perfecte wijze. De Exsis-t 588 weegt klaar voor vertrek slechts 2.770 kg, zodat u zonder problemen nog voldoende bagage kunt laden zonder de belangrijke grens van 3,5 ton te overschrijden. Hiermee zet hij opnieuw maatstaven uit <span class="k">in </span>de klasse van de half-integralen. Dankzij speciaal ontwikkelde materialen, uiterst moderne productietechnieken, de GFK-lichtgewichtvloer, het AL-KO-lichtgewichtframe en de voor het merk typische PUAL-constructie konden we bij de productie van de Exsis-t veel gewicht besparen – zonder ons daarvoor op het vlak van uitrusting met minder tevreden te stellen: led-verlichting binnen, garagedeuren aan beide zijkanten en koudschuimmatrassen met verschillende zones zijn evenzeer standaard als het omvangrijke veiligheidspakket met airbags, ESP, Hill Holder en veel meer.<span class="s2">",
+       "</span>body_type<span class="s2">": "</span>AL<span class="s2">",
+       "</span>sleep_accomodations<span class="s2">": "</span>3<span class="s2">",
+       "</span>beds<span class="s2">":"</span>2<span class="s2">",
+       "</span>interior_layout<span class="s2">":"</span>FB<span class="s2">",
+       "</span>headroom<span class="s2">" : "</span>50<span class="s2">",
+       "</span>height<span class="s2">" : "</span>277<span class="s2">",
+       "</span>length<span class="s2">" : "</span>744<span class="s2">",
        "</span>fuel_type<span class="s2">": "</span>B<span class="s2">",
        "</span>fuel_consumption_city<span class="s2">": "</span>16<span class="s2">",
        "</span>fuel_consumption_highway<span class="s2">": "</span>23<span class="s2">",
        "</span>fuel_consumption_combined<span class="s2">": "</span>20<span class="s2">",
        "</span>transmission_type<span class="s2">": "</span>H<span class="s2">",
        "</span>transmission_amount<span class="s2">": 5,
-       "</span>color<span class="s2">": "</span>geel<span class="s2">",
+       "</span>color<span class="s2">": "</span>Zilver<span class="s2">",
        "</span>color_brand<span class="s2">": null,
        "</span>mileage<span class="s2">": 59638,
        "</span>mileage_type<span class="s2">": "</span>KM<span class="s2">",
@@ -1242,9 +1375,10 @@ Remember — don't forget to authenticate!
        "</span>doors<span class="s2">": 5,
        "</span>seats<span class="s2">": 5,
        "</span>keys_amount<span class="s2">": 2,
-       "</span>weight<span class="s2">": 1063,
+       "</span>weight<span class="s2">": 4000,
        "</span>construction_date<span class="s2">": "</span>2014-01-01<span class="s2">",
        "</span>apk_due_date<span class="s2">": "</span>2018-11-26<span class="s2">",
+       "</span>apk_on_delivery<span class="s2">": true,
        "</span>price_excl_vat<span class="s2">": 10450,
        "</span>price_incl_vat<span class="s2">": 10450,
        "</span>price_delivery<span class="s2">": 0,
@@ -1252,44 +1386,42 @@ Remember — don't forget to authenticate!
        "</span>tax_benefit<span class="s2">": 25,
        "</span>tax_road_min<span class="s2">": "</span>117.00<span class="s2">",
        "</span>tax_road_max<span class="s2">": "</span>130.00<span class="s2">",
+       "</span>tax_declarable<span class="s2">" : true,
        "</span>accessories<span class="s2">": [
-           "</span>3e remlicht<span class="s2">",
-           "</span>Airbag<span class="o">(</span>s<span class="o">)</span> hoofd en side<span class="s2">",
-           "</span>Airbag bestuurder en passagier<span class="s2">",
-           "</span>Airco<span class="s2">",
-           "</span>Alarm klasse 1<span class="o">(</span>startblokkering<span class="o">)</span><span class="s2">",
-           "</span>Anti blokkeer systeem<span class="s2">",
-           "</span>AUX-ingang<span class="s2">",
-           "</span>Bestuurdersstoel <span class="k">in </span>hoogte verstelbaar<span class="s2">",
-           "</span>Boordcomputer<span class="s2">",
-           "</span>Buitenspiegels elektrisch verstelbaar<span class="s2">",
-           "</span>Centrale deurvergrendeling met afstandsbediening<span class="s2">",
-           "</span>Cruise control<span class="s2">",
-           "</span>Electronic stability program<span class="s2">",
-           "</span>Elektrische ramen voor<span class="s2">",
-           "</span>Extra getint glas<span class="s2">",
-           "</span>Hoofdsteunen achter<span class="s2">",
-           "</span>Isofix<span class="s2">",
-           "</span>Lederen stuurwiel<span class="s2">",
-           "</span>Lichtmetalen velgen 16<span class="se">\"</span><span class="s2">",
-           "</span>Mistlampen voor<span class="s2">",
-           "</span>Multimedia-voorbereiding<span class="s2">",
-           "</span>Navigatie systeem af fabriek<span class="s2">",
-           "</span>Radio-cd/mp3 speler<span class="s2">",
-           "</span>Ruitenwisser achter<span class="s2">",
-           "</span>Stuur verstelbaar<span class="s2">",
-           "</span>USB-poort<span class="s2">"
+           ["</span>3e remlicht<span class="s2">","</span>sec<span class="s2">"],
+           ["</span>Airbag<span class="o">(</span>s<span class="o">)</span> hoofd en side<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Airbag bestuurder en passagier<span class="s2">","</span>sec<span class="s2">"],
+           ["</span>Airco<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Alarm klasse 1<span class="o">(</span>startblokkering<span class="o">)</span><span class="s2">","</span>sec<span class="s2">"],
+           ["</span>Anti blokkeer systeem<span class="s2">","</span>sec<span class="s2">"],
+           ["</span>AUX-ingang<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Bestuurdersstoel <span class="k">in </span>hoogte verstelbaar<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Boordcomputer<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Buitenspiegels elektrisch verstelbaar<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Centrale deurvergrendeling met afstandsbediening<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Cruise control<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Electronic stability program<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Elektrische ramen voor<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Extra getint glas<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Hoofdsteunen achter<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Lederen stuurwiel<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Lichtmetalen velgen 16<span class="se">\"</span><span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Mistlampen voor<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Multimedia-voorbereiding<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Navigatie systeem af fabriek<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Radio-cd/mp3 speler<span class="s2">","</span>int<span class="s2">"],
+           ["</span>Ruitenwisser achter<span class="s2">","</span>ext<span class="s2">"],
+           ["</span>Stuur verstelbaar<span class="s2">","</span>int<span class="s2">"],
+           ["</span>USB-poort<span class="s2">", "</span>int<span class="s2">"]
        ],
        "</span>videos<span class="s2">": [
            {
                "</span><span class="nb">type</span><span class="s2">": "</span>YT<span class="s2">",
-               "</span>url<span class="s2">": "</span>https://www.youtube.com/v/4160NvEhThA<span class="s2">"
+               "</span>url<span class="s2">": "</span>https://www.youtube.com/v/L3dqNPkBtnw<span class="s2">"
            }
        ],
        "</span>images<span class="s2">": [
-        "</span>http://google.com/image.jpg<span class="s2">",
-        "</span>http://google.com/image2.jpg<span class="s2">",
-        "</span>http://google.com/image3.jpg<span class="s2">"
+        "</span>https://www.hymer.com/assets/images/modell-2018/reisemobile/exsis-t/HYMER_Exsis_t_silber_schwarz_Exterieur_Frontansicht.jpg<span class="s2">"
        ]
    }
 </span></code></pre>
@@ -1298,7 +1430,7 @@ Remember — don't forget to authenticate!
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
         </span><span class="s2">"advertiser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autobedrijf Janssen"</span><span class="p">,</span><span class="w">
@@ -1311,23 +1443,23 @@ Remember — don't forget to authenticate!
             </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+31 40 123 45 67"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@autobedrijfjassen.nl"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://autobedrijfjanssen.nl"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:22"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:22"</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:14:46"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:14:46"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"license_plate_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AABB11"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"license_plate_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa-bb-cc"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"chassis_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Opel"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corsa"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"serie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4-16V DESIGN EDITION 5-Drs Airco LM16"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Modelreeks, informatie, etc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"body_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HB"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_consumption_city"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_consumption_highway"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_consumption_combined"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transmission_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hymer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exsis-t"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"serie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T 647 Premium"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Met de nieuwe Exsis-t zetten wij de succesvolle geschiedenis van de lichtgewichten voort. Met een totaal gewicht van minder dan 2.900 kg combineren wij in deze reeks lichtgewichtbouw en comfort op bijna perfecte wijze. De Exsis-t 588 weegt klaar voor vertrek slechts 2.770 kg, zodat u zonder problemen nog voldoende bagage kunt laden zonder de belangrijke grens van 3,5 ton te overschrijden. Hiermee zet hij opnieuw maatstaven uit in de klasse van de half-integralen. Dankzij speciaal ontwikkelde materialen, uiterst moderne productietechnieken, de GFK-lichtgewichtvloer, het AL-KO-lichtgewichtframe en de voor het merk typische PUAL-constructie konden we bij de productie van de Exsis-t veel gewicht besparen &amp;ndash; zonder ons daarvoor op het vlak van uitrusting met minder tevreden te stellen: led-verlichting binnen, garagedeuren aan beide zijkanten en koudschuimmatrassen met verschillende zones zijn evenzeer standaard als het omvangrijke veiligheidspakket met airbags, ESP, Hill Holder en veel meer."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"body_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_consumption_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_consumption_highway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_consumption_combined"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transmission_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transmission_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zilver"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"color_brand"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mileage"</span><span class="p">:</span><span class="w"> </span><span class="mi">59638</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mileage_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KM"</span><span class="p">,</span><span class="w">
@@ -1343,58 +1475,146 @@ Remember — don't forget to authenticate!
         </span><span class="s2">"doors"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"keys_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1063</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"construction_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-01 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"apk_due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-26 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_excl_vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10450.00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_incl_vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10450.00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_delivery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price_bpm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1051.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"construction_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-01 00:00:00.000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe/Amsterdam"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tax_declarable"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sleep_accomodations"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beds"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"interior_layout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"headroom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"277"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"744"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"apk_due_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-26 00:00:00.000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe/Amsterdam"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"price_excl_vat"</span><span class="p">:</span><span class="w"> </span><span class="mi">10450</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_incl_vat"</span><span class="p">:</span><span class="w"> </span><span class="mi">10450</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_delivery"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_bpm"</span><span class="p">:</span><span class="w"> </span><span class="mi">1051</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_benefit"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_road_min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"117.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_road_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"accessories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"3e remlicht"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airbag(s) hoofd en side"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airbag bestuurder en passagier"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airco"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Alarm klasse 1(startblokkering)"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Anti blokkeer systeem"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"AUX-ingang"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Bestuurdersstoel in hoogte verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Boordcomputer"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Buitenspiegels elektrisch verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Centrale deurvergrendeling met afstandsbediening"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Cruise control"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Electronic stability program"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Elektrische ramen voor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Extra getint glas"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Hoofdsteunen achter"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Isofix"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Lederen stuurwiel"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Lichtmetalen velgen 16</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Mistlampen voor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Multimedia-voorbereiding"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Navigatie systeem af fabriek"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Radio-cd/mp3 speler"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Ruitenwisser achter"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Stuur verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"USB-poort"</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3e remlicht"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airbag(s) hoofd en side"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airbag bestuurder en passagier"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airco"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alarm klasse 1(startblokkering)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anti blokkeer systeem"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUX-ingang"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bestuurdersstoel in hoogte verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boordcomputer"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buitenspiegels elektrisch verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centrale deurvergrendeling met afstandsbediening"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cruise control"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electronic stability program"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elektrische ramen voor"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extra getint glas"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hoofdsteunen achter"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lederen stuurwiel"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lichtmetalen velgen 16</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mistlampen voor"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multimedia-voorbereiding"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Navigatie systeem af fabriek"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radio-cd/mp3 speler"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ruitenwisser achter"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stuur verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USB-poort"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"videos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.youtube.com/v/RICBjWLwupw"</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.youtube.com/v/L3dqNPkBtnw"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"http://google.com/image.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"http://google.com/image2.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"http://google.com/image3.jpg"</span><span class="w">
+            </span><span class="s2">"https://www.hymer.com/assets/images/modell-2018/reisemobile/exsis-t/HYMER_Exsis_t_silber_schwarz_Exterieur_Frontansicht.jpg"</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:39"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:50:27"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging.financial.leasedesk.nl/aanbod/1"</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:51:41"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:54:39"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hymer.ptchr-lv.nl/hymer-exsis-t-t-647-premium-1"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1402,7 +1622,7 @@ Remember — don't forget to authenticate!
 
 <aside class="warning">Make sure you send the json payload as raw body data to the endpoint.</aside>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>PUT https://staging.financial.leasedesk.nl/api/v1/car/&lt;ID&gt;</code></p>
+<p><code>PUT https://hymer.ptchr-lv.nl/api/v1/car/&lt;ID&gt;</code></p>
 <h3 id='raw-body-parameters-json-2'>Raw Body Parameters (JSON)</h3>
 <table><thead>
 <tr>
@@ -1435,6 +1655,42 @@ Remember — don't forget to authenticate!
 <td>The type name</td>
 <td>Yes</td>
 <td></td>
+</tr>
+<tr>
+<td>sleep_accomodations</td>
+<td>how many people can sleep in this vehicle</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>beds</td>
+<td>How many beds this vehicle has</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>interior_layout</td>
+<td>What type of interior layout (see below)</td>
+<td>No</td>
+<td><em>in: FR, LB, DB, O</em></td>
+</tr>
+<tr>
+<td>headroom</td>
+<td>Inside height of vehicle in cm</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>height</td>
+<td>height of vehicle in cm</td>
+<td>No</td>
+<td><em>integer</em></td>
+</tr>
+<tr>
+<td>length</td>
+<td>length of vehicle in cm</td>
+<td>No</td>
+<td><em>integer</em></td>
 </tr>
 <tr>
 <td>serie</td>
@@ -1500,7 +1756,7 @@ Remember — don't forget to authenticate!
 <td>body_type</td>
 <td>The body type (see below)</td>
 <td>Yes</td>
-<td><em>in: HB,CB,CP,SUV,SD,SW,MPV,CC,O</em></td>
+<td><em>in: AL,IN,CA,FC,O</em></td>
 </tr>
 <tr>
 <td>construction_date</td>
@@ -1567,6 +1823,12 @@ Remember — don't forget to authenticate!
 <td>Due date for the yearly check-up</td>
 <td>No</td>
 <td><em>date:Y-m-d</em></td>
+</tr>
+<tr>
+<td>apk_on_delivery</td>
+<td>APK on delivery</td>
+<td>No</td>
+<td><em>boolean</em></td>
 </tr>
 <tr>
 <td>nap_valid</td>
@@ -1653,6 +1915,12 @@ Remember — don't forget to authenticate!
 <td><em>numeric</em></td>
 </tr>
 <tr>
+<td>tax_declarable</td>
+<td>Is this vehicle tax declarable</td>
+<td>No</td>
+<td><em>boolean</em></td>
+</tr>
+<tr>
 <td>images</td>
 <td>Array of images (see below)</td>
 <td>Yes</td>
@@ -1666,12 +1934,12 @@ Remember — don't forget to authenticate!
 </tr>
 <tr>
 <td>accessories</td>
-<td>Array of accessores (see below)</td>
+<td>Array of [accessories with categories] &#39;int&#39;, &#39;ext&#39;, &#39;sec&#39;, and &#39;O&#39;. Interior, exterior, security and Overig. (see below)</td>
 <td>No</td>
-<td><em>array</em></td>
+<td><em>array[accesories, category]</em></td>
 </tr>
 </tbody></table>
-<h2 id='get-all-cars'>Get All Cars</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/car"</span>
+<h2 id='get-all-cars'>Get All Cars</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/car"</span>
   -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1690,14 +1958,14 @@ Remember — don't forget to authenticate!
 </span></code></pre>
 <p>This endpoint retrieves all Cars created by the currently authenticated client.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://staging.financial.leasedesk.nl/api/v1/car</code></p>
+<p><code>GET https://hymer.ptchr-lv.nl/api/v1/car</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <p>None</p>
 
 <aside class="success">
 Remember — don't forget to authenticate!
 </aside>
-<h2 id='get-a-specific-car'>Get a Specific Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/car/1"</span>
+<h2 id='get-a-specific-car'>Get a Specific Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/car/2"</span>
   -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
 </code></pre>
 <blockquote>
@@ -1705,7 +1973,7 @@ Remember — don't forget to authenticate!
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"advertiser"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autobedrijf Janssen"</span><span class="p">,</span><span class="w">
@@ -1718,23 +1986,23 @@ Remember — don't forget to authenticate!
             </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+31 40 123 45 67"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info@autobedrijfjassen.nl"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"web"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://autobedrijfjanssen.nl"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:22"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:22"</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:14:46"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:14:46"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"license_plate_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PD839Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"license_plate_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aa-bb-cc"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"chassis_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Opel"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Corsa"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"serie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4-16V DESIGN EDITION 5-Drs Airco LM16"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Modelreeks, informatie, etc"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"body_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HB"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fuel_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hymer"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exsis-t"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"serie"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T 647 Premium"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Met de nieuwe Exsis-t zetten wij de succesvolle geschiedenis van de lichtgewichten voort. Met een totaal gewicht van minder dan 2.900 kg combineren wij in deze reeks lichtgewichtbouw en comfort op bijna perfecte wijze. De Exsis-t 588 weegt klaar voor vertrek slechts 2.770 kg, zodat u zonder problemen nog voldoende bagage kunt laden zonder de belangrijke grens van 3,5 ton te overschrijden. Hiermee zet hij opnieuw maatstaven uit in de klasse van de half-integralen. Dankzij speciaal ontwikkelde materialen, uiterst moderne productietechnieken, de GFK-lichtgewichtvloer, het AL-KO-lichtgewichtframe en de voor het merk typische PUAL-constructie konden we bij de productie van de Exsis-t veel gewicht besparen &amp;ndash; zonder ons daarvoor op het vlak van uitrusting met minder tevreden te stellen: led-verlichting binnen, garagedeuren aan beide zijkanten en koudschuimmatrassen met verschillende zones zijn evenzeer standaard als het omvangrijke veiligheidspakket met airbags, ESP, Hill Holder en veel meer."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"body_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fuel_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"fuel_consumption_city"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
         </span><span class="s2">"fuel_consumption_highway"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
         </span><span class="s2">"fuel_consumption_combined"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"transmission_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transmission_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"transmission_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"geel"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zilver"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"color_brand"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mileage"</span><span class="p">:</span><span class="w"> </span><span class="mi">59638</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mileage_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KM"</span><span class="p">,</span><span class="w">
@@ -1750,9 +2018,25 @@ Remember — don't forget to authenticate!
         </span><span class="s2">"doors"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"seats"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
         </span><span class="s2">"keys_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1063</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"construction_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-01 00:00:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"apk_due_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-26 00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">4000</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"construction_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-01-01 00:00:00.000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe/Amsterdam"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"condition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tax_declarable"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sleep_accomodations"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"beds"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"interior_layout"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FB"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"headroom"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">277</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">744</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"apk_due_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-26 00:00:00.000000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe/Amsterdam"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="s2">"price_excl_vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10450.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price_incl_vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10450.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"price_delivery"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
@@ -1761,47 +2045,119 @@ Remember — don't forget to authenticate!
         </span><span class="s2">"tax_road_min"</span><span class="p">:</span><span class="w"> </span><span class="s2">"117.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tax_road_max"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"accessories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"3e remlicht"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airbag(s) hoofd en side"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airbag bestuurder en passagier"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Airco"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Alarm klasse 1(startblokkering)"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Anti blokkeer systeem"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"AUX-ingang"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Bestuurdersstoel in hoogte verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Boordcomputer"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Buitenspiegels elektrisch verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Centrale deurvergrendeling met afstandsbediening"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Cruise control"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Electronic stability program"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Elektrische ramen voor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Extra getint glas"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Hoofdsteunen achter"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Isofix"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Lederen stuurwiel"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Lichtmetalen velgen 16</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Mistlampen voor"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Multimedia-voorbereiding"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Navigatie systeem af fabriek"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Radio-cd/mp3 speler"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Ruitenwisser achter"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"Stuur verstelbaar"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"USB-poort"</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3e remlicht"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airbag(s) hoofd en side"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airbag bestuurder en passagier"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Airco"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alarm klasse 1(startblokkering)"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anti blokkeer systeem"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sec"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUX-ingang"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bestuurdersstoel in hoogte verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Boordcomputer"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buitenspiegels elektrisch verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centrale deurvergrendeling met afstandsbediening"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cruise control"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Electronic stability program"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elektrische ramen voor"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extra getint glas"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hoofdsteunen achter"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lederen stuurwiel"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lichtmetalen velgen 16</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mistlampen voor"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multimedia-voorbereiding"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Navigatie systeem af fabriek"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Radio-cd/mp3 speler"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ruitenwisser achter"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ext"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stuur verstelbaar"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USB-poort"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"int"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"videos"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.youtube.com/v/RICBjWLwupw"</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.youtube.com/v/L3dqNPkBtnw"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
         </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"http://google.com/image.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"http://google.com/image2.jpg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"http://google.com/image3.jpg"</span><span class="w">
+            </span><span class="s2">"https://www.hymer.com/assets/images/modell-2018/reisemobile/exsis-t/HYMER_Exsis_t_silber_schwarz_Exterieur_Frontansicht.jpg"</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:47:39"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20-02-2018 09:50:27"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://staging.financial.leasedesk.nl/aanbod/1"</span><span class="w">
+        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:26:49"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16-01-2019 14:26:49"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://hymer.ptchr-lv.nl/hymer-exsis-t-t-647-premium"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1809,7 +2165,7 @@ Remember — don't forget to authenticate!
 
 <aside class="warning">If you try to get an advertiser that wasn't added by your client a HTTP error will be returned.</aside>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>GET https://staging.financial.leasedesk.nl/api/v1/car/&lt;ID&gt;</code></p>
+<p><code>GET https://hymer.ptchr-lv.nl/api/v1/car/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1822,7 +2178,7 @@ Remember — don't forget to authenticate!
 <td>The ID of the Car to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-car'>Delete a Specific Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/car/1"</span>
+<h2 id='delete-a-specific-car'>Delete a Specific Car</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://hymer.ptchr-lv.nl/api/v1/car/1"</span>
   -X DELETE
   -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
 </code></pre>
@@ -1835,7 +2191,7 @@ Remember — don't forget to authenticate!
 
 <aside class="warning">The JSON response will be empty, when the Car is deleted succesfully a HTTP 200 OK response will be returned.</aside>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE https://staging.financial.leasedesk.nl/api/v1/car/&lt;ID&gt;</code></p>
+<p><code>DELETE https://hymer.ptchr-lv.nl/api/v1/car/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -1914,36 +2270,44 @@ Remember — don't forget to authenticate!
 </tr>
 </thead><tbody>
 <tr>
-<td>HB</td>
-<td>Hatchback</td>
+<td>AL</td>
+<td>Alkoof</td>
 </tr>
 <tr>
-<td>CB</td>
-<td>Cabrio</td>
+<td>IN</td>
+<td>(Half) Integraal</td>
 </tr>
 <tr>
-<td>CP</td>
-<td>Coupe</td>
+<td>CA</td>
+<td>Caravans</td>
 </tr>
 <tr>
-<td>SUV</td>
-<td>SUV/Terreinwagen/Pick-up</td>
+<td>FC</td>
+<td>FamilieCaravans</td>
 </tr>
 <tr>
-<td>SD</td>
-<td>Sedan</td>
+<td>O</td>
+<td>Overige</td>
+</tr>
+</tbody></table>
+<h3 id='interior_layout'>interior_layout</h3>
+<table><thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>FR</td>
+<td>Frans Bed</td>
 </tr>
 <tr>
-<td>SW</td>
-<td>Stationwagon</td>
+<td>LB</td>
+<td>Lengte Bed</td>
 </tr>
 <tr>
-<td>MPV</td>
-<td>MPV</td>
-</tr>
-<tr>
-<td>CC</td>
-<td>Bedrijfswagen (company car)</td>
+<td>DB</td>
+<td>Dwars Bed</td>
 </tr>
 <tr>
 <td>O</td>
@@ -2034,139 +2398,21 @@ Remember — don't forget to authenticate!
 </span></code></pre>
 <p>Accepted video types currently are <code>YT</code> (YouTube) and <code>VM</code> (Vimeo).</p>
 <h3 id='accessories'>accessories</h3>
-<p>The accessories key should contain an array holding all accessories, a sample payload is:</p>
+<p>The accessories key should contain an array holding all accessories with categories(int, ext, sec, o).
+accessories | Array of [accessories with categories] &#39;int&#39;, &#39;ext&#39;, &#39;sec&#39;, and &#39;O&#39;. Interior, exterior, security and Overig. (see below) | No | <em>array[accesories, category]</em></p>
+
+<p>a sample payload is:</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="err">//</span><span class="w"> </span><span class="err">other</span><span class="w"> </span><span class="err">data</span><span class="w">
-    </span><span class="s2">"accessories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"xenon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sportstoelen"</span><span class="p">,</span><span class="w"> </span><span class="s2">"climate control"</span><span class="p">]</span><span class="w">
+    </span><span class="s2">"accessories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"xenon"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ext"</span><span class="p">],</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"sportstoelen"</span><span class="p">,</span><span class="w"> </span><span class="s2">"int"</span><span class="p">],</span><span class="w"> 
+      </span><span class="p">[</span><span class="s2">"climate control"</span><span class="p">,</span><span class="s2">"int"</span><span class="p">],</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"alarmsysteem"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sec"</span><span class="p">],</span><span class="w">
+      </span><span class="p">[</span><span class="s2">"lane-assist"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sec"</span><span class="p">]</span><span class="w">
     </span><span class="err">//</span><span class="w"> </span><span class="err">other</span><span class="w"> </span><span class="err">data</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='advertisements'>Advertisements</h1><h2 id='create-an-advertisement'>Create an Advertisement</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertisement/create
-    -X POST
-    -H "</span>Authorization: Bearer &lt;your_access_token&gt;<span class="s2">"
-    -H "</span>Content-Type: application/json<span class="s2">"
-    -H "</span>Accept: application/json<span class="s2">"
-    --data {
-        "</span>name<span class="s2">": "</span>Autobedrijf Janssen<span class="s2">",
-        "</span>image_src<span class="s2">": "</span>Stationstraat<span class="s2">",
-        "</span>target_url<span class="s2">": "</span>10<span class="s2">",
-        "</span>display_from<span class="s2">": "",
-        "</span>display_to<span class="s2">": "",
-        "</span>show_in_brands<span class="s2">": [
-            "</span>1<span class="s2">",
-            "</span>2<span class="s2">"
-        ],
-        "</span>show_in_type<span class="s2">": [
-            "</span>1<span class="s2">",
-            "</span>2<span class="s2">"
-        ],        
-    }
-</span></code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autobedrijf Janssen"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"img_src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stationstraat"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"target_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"display_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"show_in_brands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"2"</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"show_in_type"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"2"</span><span class="w">
-        </span><span class="p">],</span><span class="w">   
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint creates a new Advertisement. An advertisement can be given dates in which the advertisement will be shown.
-An advertisement can be specific for one or more brands, and/or, one or more types ( models ).</p>
-
-<aside class="warning">Make sure you send the json payload as raw body data to the endpoint.</aside>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://staging.financial.leasedesk.nl/api/v1/advertiser/create</code></p>
-<h3 id='raw-body-parameters-json'>Raw Body Parameters (JSON)</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Validation Rules</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>name</td>
-<td>Name of the Advertisement</td>
-<td>yes</td>
-<td><em>none</em></td>
-</tr>
-<tr>
-<td>image_src</td>
-<td>Absolute source of the advertisement image</td>
-<td>yes</td>
-<td><em>valid URL</em></td>
-</tr>
-<tr>
-<td>target_url</td>
-<td>Absolute Target of the advertisement</td>
-<td>yes</td>
-<td><em>valid URL</em></td>
-</tr>
-<tr>
-<td>display_from</td>
-<td>date from which the advertisement should be visible</td>
-<td>no</td>
-<td><em>date:Y-m-d</em></td>
-</tr>
-<tr>
-<td>display_to</td>
-<td>date to which the advertisement should not be visible</td>
-<td>no</td>
-<td><em>date:Y-m-d</em></td>
-</tr>
-<tr>
-<td>show_in_brands</td>
-<td>array of brand_ID&#39;s in which this advertisement should be shown</td>
-<td>no</td>
-<td><em>array</em></td>
-</tr>
-<tr>
-<td>show_in_type</td>
-<td>array of type_ID&#39;s in which this advertisement should be shown</td>
-<td>no</td>
-<td><em>array</em></td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-advertisement'>Delete a Specific Advertisement</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://staging.financial.leasedesk.nl/api/v1/advertisement/1"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: Bearer &lt;your_access_token&gt;"</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific Advertisement.</p>
-
-<aside class="warning">The JSON response will be empty, when the Advertisement is deleted succesfully a HTTP 200 OK response will be returned.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>DELETE https://staging.financial.leasedesk.nl/api/v1/advertisement/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the advertisement to delete</td>
-</tr>
-</tbody></table>
-<h1 id='status-codes'>Status codes</h1>
+</span></code></pre><h1 id='status-codes'>Status codes</h1>
 <p>The API uses the following HTTP status codes:</p>
 <h3 id='error-codes-http-status-codes'>Error codes (HTTP status codes)</h3>
 <table><thead>
