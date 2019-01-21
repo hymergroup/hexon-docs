@@ -57,12 +57,12 @@ This endpoint creates a new Advertiser.
 Parameter | Description | Required | Validation Rules
 --------- | ----------- | -------- | ----------------
 name | Name of the Advertiser | yes | *none*
-street | Street of the Advertiser | no | *max 255 chars*
-number | Housenumber of the Advertiser | no | *max 255 chars*
+street | Street of the Advertiser | yes | *max 255 chars*
+number | Housenumber of the Advertiser | yes | *max 255 chars*
 number_extra | Housenumber addition | no | *max 255 chars*
-zipcode | Postalcode of the Advertiser | no | *max 255 chars*
-city | City of the Advertiser | no | *max 255 chars*
-county | Country of the Advertiser | no | *max 255 chars*
+zipcode | Postalcode of the Advertiser | yes | *max 255 chars*
+city | City of the Advertiser | yes | *max 255 chars*
+county | Country of the Advertiser | yes | *max 255 chars*
 phone | Phone number of the Advertiser | no | *max 255 chars*
 email | E-mailaddress of the Advertiser| no | *valid e-mailaddress*
 web | Website address of the Advertiser | no | *valid URL*
@@ -124,12 +124,12 @@ This endpoint updates an existing Advertiser.
 Parameter | Description | Required | Validation Rules
 --------- | ----------- | -------- | ----------------
 name | Name of the Advertiser | yes | *none*
-street | Street of the Advertiser | no | *max 255 chars*
-number | Housenumber of the Advertiser | no | *max 255 chars*
+street | Street of the Advertiser | yes | *max 255 chars*
+number | Housenumber of the Advertiser | yes | *max 255 chars*
 number_extra | Housenumber addition | no | *max 255 chars*
-zipcode | Postalcode of the Advertiser | no | *max 255 chars*
-city | City of the Advertiser | no | *max 255 chars*
-county | Country of the Advertiser | no | *max 255 chars*
+zipcode | Postalcode of the Advertiser | yes | *max 255 chars*
+city | City of the Advertiser | yes | *max 255 chars*
+county | Country of the Advertiser | yes | *max 255 chars*
 phone | Phone number of the Advertiser | no | *max 255 chars*
 email | E-mailaddress of the Advertiser| no | *valid e-mailaddress*
 web | Website address of the Advertiser | no | *valid URL*
